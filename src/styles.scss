@@ -1,7 +1,7 @@
 // === LOCAL IMPORTS
 
-@import './styles/css-reset.scss';
-@import './styles/variables.scss';
+@import "./styles/css-reset.scss";
+@import "./styles/variables.scss";
 
 // === REMOTE IMPORTS
 
@@ -11,30 +11,16 @@
 
 // === GLOBAL STYLE
 
-
 //=== Global style
 
 :root {
   font-size: 18px;
 }
 
-#app {
-  font-family: 'Josefin Sans', 'Source Sans Pro', Helvetica, Arial, sans-serif;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  text-align: center;
-
-  min-height: 100vh;
-
-  color: $gray-dark;
-}
-
 button,
 a,
-input[type='submit'],
-input[type='button'] {
+input[type="submit"],
+input[type="button"] {
   cursor: pointer;
 }
 
@@ -64,5 +50,16 @@ h1 {
 }
 
 body {
-  background-color: $white;
+  font-family: "Josefin Sans", "Source Sans Pro", Helvetica, Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-align: center;
+
+  min-height: 100vh;
+
+  color: $dark;
+
+  background-color: $main;
 }
