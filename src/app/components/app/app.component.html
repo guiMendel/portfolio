@@ -9,8 +9,11 @@
     </header>
 
     <!-- Page content -->
-    <div class="page-content">
-      Hell yeah baby!
+    <div class="page-content" [ngSwitch]="tabs[selectedTabIndex].title">
+      <app-portfolio-view *ngSwitchCase="'Portfolio'" />
+      <app-experience-view *ngSwitchCase="'Experience'" />
+      <app-about-view *ngSwitchCase="'About'" />
+      <app-contact-view *ngSwitchCase="'Contact'" />
     </div>
   </main>
 
