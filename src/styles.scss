@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+// === LOCAL IMPORTS
+
+@import './styles/css-reset.scss';
+@import './styles/variables.scss';
+
+// === REMOTE IMPORTS
+
+// Fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+
+// === GLOBAL STYLE
+
+
+//=== Global style
+
+:root {
+  font-size: 18px;
+}
+
+#app {
+  font-family: 'Josefin Sans', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-align: center;
+
+  min-height: 100vh;
+
+  color: $gray-dark;
+}
+
+button,
+a,
+input[type='submit'],
+input[type='button'] {
+  cursor: pointer;
+}
+
+// Use flexbox always
+div,
+main,
+section,
+header,
+footer,
+form,
+button,
+p,
+span,
+label {
+  display: flex;
+  align-items: flex-start;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: $gray;
+}
+
+h1 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+body {
+  background-color: $white;
+}

@@ -1,0 +1,56 @@
+// Obs. pode usar variaveis de scss quando elas forem sempre constantes
+$border-radius: 20px;
+
+$box-shadow-intensity: 1px rgba(128, 128, 128, 0.157);
+
+// === Z-INDEX LAYERS
+
+@function layer-background($offset: 0) {
+  @return calc(-1000 + $offset);
+}
+
+@function layer-text($offset: 0) {
+  @return calc(0 + $offset);
+}
+
+@function layer-hover($offset: 0) {
+  @return calc(1000 + $offset);
+}
+
+@function layer-attention($offset: 0) {
+  @return calc(2000 + $offset);
+}
+
+// === COLORS
+
+$white: white;
+$gray-washed: rgb(250, 250, 250);
+$gray-lighter: rgb(233, 233, 233);
+$gray-light: rgb(202, 202, 202);
+$gray: rgb(187, 187, 187);
+$gray-dark: rgb(143, 143, 143);
+$gray-darker: rgb(85, 85, 85);
+
+$error-washed: rgb(255, 218, 218);
+$error-lighter: rgb(255, 172, 172);
+$error-light: rgb(253, 107, 107);
+$error: rgb(255, 24, 24);
+$error-dark: rgb(210, 22, 22);
+
+$warning-washed: rgb(255, 254, 246);
+$warning-lighter: rgb(253, 247, 196);
+$warning-light: rgb(255, 240, 131);
+$warning: rgb(250, 222, 9);
+$warning-dark: rgb(212, 188, 11);
+
+$green-washed: rgb(235, 252, 235);
+$green-lighter: rgb(193, 248, 193);
+$green-light: rgb(104, 231, 104);
+$green: rgb(34, 201, 34);
+$green-dark: rgb(46, 147, 46);
+$green-darker: rgb(45, 121, 45);
+
+$blue-lighter: rgb(167, 204, 254);
+$blue-light: rgb(104, 169, 253);
+$blue: rgb(20, 122, 255);
+$blue-dark: rgb(5, 87, 193);
