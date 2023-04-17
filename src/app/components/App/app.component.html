@@ -3,10 +3,9 @@
   <main>
     <!-- Tab switcher -->
     <header>
-      <span>Portfolio</span>
-      <span>Experience & Formation</span>
-      <span>About Me</span>
-      <span>Contact</span>
+      <span *ngFor="let tab of tabs; let i = index; trackBy: trackTab" [class.active]="i == selectedTabIndex"
+        (click)="selectedTabIndex = i">
+        {{tab.title}}</span>
     </header>
 
     <!-- Page content -->

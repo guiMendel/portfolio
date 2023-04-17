@@ -25,18 +25,27 @@
       padding: 0 3rem;
       font-weight: 500;
 
-      :first-child {
-        margin-bottom: -$tab-border-width;
-        border: $tab-border-width solid $dark;
-        border-bottom: calc($tab-border-width + 1px) solid $main;
-        border-radius: $tab-option-radius $tab-option-radius 0 0;
-      }
-
       span {
         padding: 0.5rem 1rem;
 
         align-items: center;
         cursor: pointer;
+
+        border: $tab-border-width solid rgba(255, 255, 255, 0);
+        border-bottom: calc($tab-border-width + 1px) solid
+          rgba(255, 255, 255, 0);
+        border-radius: $tab-option-radius $tab-option-radius 0 0;
+        margin-bottom: -$tab-border-width;
+
+        color: $gray-darker;
+        
+        transition: all 200ms;
+
+        &.active {
+          border: $tab-border-width solid $dark;
+          border-bottom: calc($tab-border-width + 1px) solid $main;
+          color: $dark;
+        }
       }
 
       z-index: 10;
