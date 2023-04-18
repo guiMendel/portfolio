@@ -7,6 +7,12 @@ import { PortfolioViewComponent } from './components/portfolio-view/portfolio-vi
 import { ExperienceViewComponent } from './components/experience-view/experience-view.component';
 import { AboutViewComponent } from './components/about-view/about-view.component';
 import { ContactViewComponent } from './components/contact-view/contact-view.component';
+import {
+  FaIconLibrary,
+  FontAwesomeModule,
+} from '@fortawesome/angular-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -14,13 +20,14 @@ import { ContactViewComponent } from './components/contact-view/contact-view.com
     PortfolioViewComponent,
     ExperienceViewComponent,
     AboutViewComponent,
-    ContactViewComponent
+    ContactViewComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faGithub, faLocationArrow);
+  }
+}

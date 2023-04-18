@@ -1,0 +1,120 @@
+@import "../../../styles/variables.scss";
+
+.content {
+  padding-inline: calc(var(--side-margin) + 1rem);
+  width: 100%;
+
+  flex-direction: column;
+  align-items: center;
+  gap: inherit;
+}
+
+.side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: inherit;
+  align-items: center;
+
+  width: 100%;
+
+  background-color: $secondary;
+  color: $light;
+
+  > * {
+    flex: 1;
+  }
+
+  p {
+    padding: 1rem;
+  }
+}
+
+.diagonal-slice {
+  position: relative;
+
+  flex-direction: column;
+
+  $slice-height: 2.5rem;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: $slice-height;
+    left: 0;
+  }
+
+  &::before {
+    background-image: linear-gradient(
+      to bottom right,
+      $main 0%,
+      $main 50%,
+      transparent 50.3%
+    );
+
+    top: 0;
+  }
+
+  &::after {
+    background-image: linear-gradient(
+      to top left,
+      $main 0%,
+      $main 50%,
+      transparent 50.3%
+    );
+
+    bottom: 0;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "Lilita One", "Dongle", Helvetica, sans-serif;
+  color: $highlight;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+span.links {
+  color: $highlight;
+
+  width: 100%;
+
+  font-size: 2rem;
+  gap: 1rem;
+
+  align-items: center;
+  justify-content: center;
+
+  fa-icon {
+    cursor: pointer;
+
+    transition: filter 100ms;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    min-width: 2rem;
+    max-width: 4rem;
+    border-top: $line-width solid $secondary;
+    flex: 1;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  line-height: 1.7rem;
+  text-align: justify;
+}
