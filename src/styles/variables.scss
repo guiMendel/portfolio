@@ -27,11 +27,25 @@ $line-width: 5px;
 
 // Main palette
 
-$main: #fffe00;
-$secondary: #b3b200;
-$highlight: #7900fa;
-$dark: #340d5e;
-$light: #ffffb3;
+// $main: #fffe00;
+// $secondary: #b3b200;
+// $highlight: #7900fa;
+// $dark: #340d5e;
+// $light: #ffffb3;
+
+:root {
+  --main-rgb: 255, 254, 0;
+  --secondary-rgb: 179, 178, 0;
+  --highlight-rgb: 121, 0, 250;
+  --dark-rgb: 52, 13, 94;
+  --light-rgb: 255, 255, 179;
+}
+
+$main: rgb(var(--main-rgb));
+$secondary: rgb(var(--secondary-rgb));
+$highlight: rgb(var(--highlight-rgb));
+$dark: rgb(var(--dark-rgb));
+$light: rgb(var(--light-rgb));
 
 // General
 

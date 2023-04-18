@@ -13,6 +13,7 @@ import {
 } from '@fortawesome/angular-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+import { TooltipHelpComponent } from './components/tooltip-help/tooltip-help.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
     ExperienceViewComponent,
     AboutViewComponent,
     ContactViewComponent,
+    TooltipHelpComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
