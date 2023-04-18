@@ -3,7 +3,7 @@
 .tooltip-help {
   position: fixed;
 
-  padding: 0.1rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
 
   background-color: rgb(var(--dark-rgb), 0.85);
@@ -17,4 +17,6 @@
 
   overflow-wrap: break-word;
   word-break: break-all;
+
+  line-height: 1.2rem;
 }
