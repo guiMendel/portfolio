@@ -11,7 +11,7 @@ import {
   FaIconLibrary,
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faAngular, faGithub, faReact, faVuejs } from '@fortawesome/free-brands-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 import { TooltipHelpComponent } from './components/tooltip-help/tooltip-help.component';
 
@@ -30,6 +30,6 @@ import { TooltipHelpComponent } from './components/tooltip-help/tooltip-help.com
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faGithub, faLocationArrow);
+    library.addIcons(faGithub, faLocationArrow, faAngular, faReact, faVuejs);
   }
 }
