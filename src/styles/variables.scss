@@ -3,6 +3,8 @@ $border-radius: 20px;
 
 $box-shadow-intensity: 1px rgba(128, 128, 128, 0.157);
 
+$line-width: 5px;
+
 // === Z-INDEX LAYERS
 
 @function layer-background($offset: 0) {
@@ -25,10 +27,11 @@ $box-shadow-intensity: 1px rgba(128, 128, 128, 0.157);
 
 // Main palette
 
-$main: #f8f188;
-$secondary: #f89020;
-$highlight: #602878;
-$dark: #300030;
+$main: #fffe00;
+$secondary: #b3b200;
+$highlight: #7900fa;
+$dark: #340d5e;
+$light: #ffffb3;
 
 // General
 

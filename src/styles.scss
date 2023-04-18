@@ -7,7 +7,11 @@
 
 // Fonts
 
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+// Dongle
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+
+// Lilita One
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 
 // === GLOBAL STYLE
 
@@ -50,7 +54,9 @@ h1 {
 }
 
 body {
-  font-family: "Josefin Sans", "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Dongle", Helvetica, Arial, sans-serif;
+
+  font-size: 1.5rem;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -62,4 +68,9 @@ body {
   color: $dark;
 
   background-color: $main;
+}
+
+fa-icon {
+  // Gets rid of empty whitespace below all icons
+  display: flex;
 }
