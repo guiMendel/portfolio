@@ -1,0 +1,72 @@
+@import "../../../styles/variables.scss";
+
+.track {
+  --width: 1.6em;
+  $pad: 0.1em;
+
+  width: var(--width);
+  height: 0.9em;
+
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.2em;
+
+  background-color: $dark;
+
+  border-radius: calc(var(--width) / 2);
+
+  transition: all 200ms;
+
+  cursor: pointer;
+
+  .handle {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
+    --size: calc(var(--width) / 2.3);
+
+    width: var(--size);
+    position: absolute;
+
+    left: $pad;
+
+    background-color: $light;
+
+    transition: all 200ms;
+
+    // display: none;
+  }
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+
+  fa-icon {
+    color: $light;
+    font-size: 0.6em;
+
+    transition: all 200ms;
+
+    &.icon-check {
+      opacity: 0;
+      transform: translateX(-0.1em);
+    }
+  }
+
+  &.active {
+    background-color: $highlight;
+    
+    .icon-check {
+      opacity: 1;
+    }
+
+    .icon-x {
+      opacity: 0;
+    }
+
+    .handle {
+      left: calc(100% - var(--size) - $pad);
+    }
+  }
+}

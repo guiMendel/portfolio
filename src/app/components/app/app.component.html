@@ -1,9 +1,18 @@
-<div class="root-container">
+<div class="root-container" [class.no-vibrant-colors]="!useVibrantColors">
   <!-- Tooltip handler -->
   <app-tooltip-help />
-  
+
   <!-- Main content -->
   <main>
+    <!-- Top section -->
+    <div class="top-section">
+      <!-- Vibrant color toggle -->
+      <span class="vibrant-color-toggle">
+        vibrant colors
+        <app-toggle [(value)]="useVibrantColors" />
+      </span>
+    </div>
+
     <!-- Tab switcher -->
     <header>
       <span *ngFor="let tab of tabs; let i = index; trackBy: trackTab" [class.active]="i == selectedTabIndex"
@@ -22,6 +31,13 @@
 
   <!-- Footer with personal details -->
   <footer>
-    Developed by Gui Mendel
+    <span>
+      Developed by Gui Mendel
+    </span>
+
+    <span class="credits">
+      Icons created by <a href="https://www.flaticon.com/" title="nordic icons">Freepik - Flaticon</a> and <a
+        href="https://fontawesome.com/icons">Fontawesome</a>
+    </span>
   </footer>
 </div>

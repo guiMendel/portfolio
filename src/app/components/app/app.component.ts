@@ -15,6 +15,9 @@ export class AppComponent {
     return tab.title;
   }
 
+  // Whether to use a vibrant color scheme
+  useVibrantColors = true
+
   tabs = [
     { title: 'Portfolio' },
     { title: 'Experience' },

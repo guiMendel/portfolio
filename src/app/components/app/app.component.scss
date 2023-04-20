@@ -8,7 +8,17 @@
   align-items: center;
   justify-content: space-between;
 
-  padding-top: 5rem;
+  padding-top: 3rem;
+
+  color: $dark;
+
+  background-color: $main;
+
+  transition: background-color 200ms;
+
+  &.no-vibrant-colors {
+    @include no-vibrant-colors;
+  }
 
   main {
     flex-direction: column;
@@ -20,6 +30,18 @@
     $tab-border-width: $line-width;
 
     --side-margin: 15%;
+
+    .top-section {
+      margin-bottom: 1rem;
+      width: 100%;
+
+      padding-inline: 3rem;
+
+      .vibrant-color-toggle {
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
 
     header {
       align-items: stretch;
@@ -57,7 +79,7 @@
           // border-bottom: calc($tab-border-width + 1px) solid $main;
           // color: $secondary;
           background-color: $secondary;
-          color: $light;
+          color: $main;
         }
       }
 
@@ -83,13 +105,24 @@
 
   footer {
     min-height: 5rem;
+    flex-direction: column;
     background-color: $dark;
     color: $main;
     width: 100%;
+
+    padding: 1rem;
 
     margin-top: 7rem;
 
     align-items: center;
     justify-content: center;
+
+    .credits {
+      display: inline;
+
+      a {
+        color: $highlight;
+      }
+    }
   }
 }

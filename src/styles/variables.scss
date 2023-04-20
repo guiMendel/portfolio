@@ -47,6 +47,22 @@ $highlight: rgb(var(--highlight-rgb));
 $dark: rgb(var(--dark-rgb));
 $light: rgb(var(--light-rgb));
 
+// No vibrant colors Palette
+
+@mixin no-vibrant-colors {
+  // $main: #FAFEFF;
+  // $secondary: #D9DDDE;
+  // $highlight: #00B2FA;
+  // $dark: #00587A;
+  // $light: #D5F0FB;
+
+  --main-rgb: 250, 254, 255;
+  --secondary-rgb: 217, 221, 222;
+  --highlight-rgb: 0, 178, 250;
+  --dark-rgb: 0, 88, 122;
+  --light-rgb: 213, 240, 251;
+}
+
 // General
 
 $white: white;

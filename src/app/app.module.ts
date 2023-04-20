@@ -1,19 +1,30 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './components/app/app.component';
-import { PortfolioViewComponent } from './components/portfolio-view/portfolio-view.component';
-import { ExperienceViewComponent } from './components/experience-view/experience-view.component';
-import { AboutViewComponent } from './components/about-view/about-view.component';
-import { ContactViewComponent } from './components/contact-view/contact-view.component';
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './components/app/app.component'
+import { PortfolioViewComponent } from './components/portfolio-view/portfolio-view.component'
+import { ExperienceViewComponent } from './components/experience-view/experience-view.component'
+import { AboutViewComponent } from './components/about-view/about-view.component'
+import { ContactViewComponent } from './components/contact-view/contact-view.component'
 import {
   FaIconLibrary,
   FontAwesomeModule,
-} from '@fortawesome/angular-fontawesome';
-import { faAngular, faGithub, faReact, faVuejs } from '@fortawesome/free-brands-svg-icons';
-import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
-import { TooltipHelpComponent } from './components/tooltip-help/tooltip-help.component';
+} from '@fortawesome/angular-fontawesome'
+import {
+  faAngular,
+  faGithub,
+  faReact,
+  faVuejs,
+} from '@fortawesome/free-brands-svg-icons'
+import {
+  faCheck,
+  faLocationArrow,
+  faX,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons'
+import { TooltipHelpComponent } from './components/tooltip-help/tooltip-help.component'
+import { ToggleComponent } from './components/toggle/toggle.component'
 
 @NgModule({
   declarations: [
@@ -23,6 +34,7 @@ import { TooltipHelpComponent } from './components/tooltip-help/tooltip-help.com
     AboutViewComponent,
     ContactViewComponent,
     TooltipHelpComponent,
+    ToggleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
@@ -30,6 +42,14 @@ import { TooltipHelpComponent } from './components/tooltip-help/tooltip-help.com
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faGithub, faLocationArrow, faAngular, faReact, faVuejs);
+    library.addIcons(
+      faGithub,
+      faLocationArrow,
+      faAngular,
+      faReact,
+      faVuejs,
+      faCheck,
+      faXmark
+    )
   }
 }
