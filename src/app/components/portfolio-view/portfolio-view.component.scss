@@ -149,12 +149,14 @@
   gap: 1rem;
 
   width: 100%;
+  overflow: hidden;
 
   .frame {
-    padding-inline: calc(var(--side-margin) + 1rem);
-    width: 100%;
+    // padding-inline: calc(var(--side-margin) + 1rem);
+    align-self: flex-start;
+    width: 200%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: $secondary;
 
     img {
@@ -206,12 +208,54 @@
     }
   }
 
-  p {
-    padding-inline: calc(var(--side-margin) + 1rem);
-    text-align: center;
+  .label {
+    width: 200%;
+    align-self: flex-start;
     font-size: 1.6rem;
 
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // justify-content: center;
+
     height: 4rem;
+
+    p {
+      flex: 1;
+      text-align: center;
+      padding-inline: calc(var(--side-margin) / 2 + 1rem);
+    }
+  }
+
+  &.transition-right {
+    .frame {
+      animation: slide-left 0.5s ease-out;
+    }
+
+    .label {
+      animation: slide-left 0.5s ease-in-out;
+    }
+  }
+
+  &.transition-left {
+    .frame {
+      flex-direction: row-reverse;
+      animation: slide-left 0.5s ease-out reverse;
+    }
+
+    .label {
+      flex-direction: row-reverse;
+      animation: slide-left 0.5s ease-in-out reverse;
+    }
+  }
+
+  @keyframes slide-left {
+    from {
+      margin-left: 0;
+    }
+
+    to {
+      margin-left: -100%;
+    }
   }
 }
 

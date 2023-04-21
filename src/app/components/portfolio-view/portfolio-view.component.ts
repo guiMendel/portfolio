@@ -32,15 +32,59 @@ export class PortfolioViewComponent {
 
   displayedFeature = 0
 
+  // Next feature to transition to
+  nextFeature: number | null = null
+
+  // Whether is ready to start a transition
+  transitionReady = true
+
+  galleryClass: { 'transition-right'?: boolean; 'transition-left'?: boolean } =
+    {}
+
+  // Returns whether to highlight this feature among gallery options
+  highlightedFeature() {
+    return this.nextFeature ?? this.displayedFeature
+  }
+
   setFeature(newIndex: number) {
+    if (this.nextFeature != null) return
+
     const n = this.featureGallery.length
 
-    this.displayedFeature = ((newIndex % n) + n) % n
+    this.nextFeature = ((newIndex % n) + n) % n
+
+    if (this.transitionReady) this.transition()
   }
 
   iconFor(index: number): IconProp {
-    return index == this.displayedFeature
+    return index == this.highlightedFeature()
       ? ['fas', 'circle-dot']
       : ['far', 'circle']
+  }
+
+  transition() {
+    if (this.nextFeature == null) return
+
+    this.transitionReady = false
+
+    if (this.nextFeature > this.displayedFeature) {
+      this.galleryClass = { 'transition-right': true }
+    } else {
+      this.galleryClass = { 'transition-left': true }
+    }
+  }
+
+  finishTransition() {
+    // Display the transitioned text
+    if (this.nextFeature != null) this.displayedFeature = this.nextFeature
+
+    // Reset the transition variables
+    this.nextFeature = null
+    this.transitionReady = true
+
+    this.galleryClass = {}
+
+    // Start queued transition
+    if (this.nextFeature != null) setTimeout(() => this.transition(), 10)
   }
 }

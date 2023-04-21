@@ -24,21 +24,31 @@
 </div> -->
 
 <!-- Feature Gallery -->
-<div class="feature-gallery">
+<div class="feature-gallery" [class]="galleryClass">
   <div class="diagonal-slice">
     <div class="frame">
+      <!-- Displayed media -->
+      <img src="../../../assets/images/app-example.svg" alt="Project preview">
+
+      <!-- Transitioning media -->
       <img src="../../../assets/images/app-example.svg" alt="Project preview">
     </div>
   </div>
 
   <div class="gallery-control">
-    <fa-icon [icon]="['fas', 'circle-left']" (click)="setFeature(displayedFeature - 1)" class="arrow"></fa-icon>
+    <fa-icon [icon]="['fas', 'circle-left']" (click)="setFeature(highlightedFeature() - 1)" class="arrow"></fa-icon>
     <fa-icon *ngFor="let feature of featureGallery; let i = index" [icon]="iconFor(i)"
-      [class.active]="i == displayedFeature" (click)="setFeature(i)" class="feature"></fa-icon>
-    <fa-icon [icon]="['fas', 'circle-right']" (click)="setFeature(displayedFeature + 1)" class="arrow"></fa-icon>
+      [class.active]="highlightedFeature() == i" (click)="setFeature(i)" class="feature"></fa-icon>
+    <fa-icon [icon]="['fas', 'circle-right']" (click)="setFeature(highlightedFeature() + 1)" class="arrow"></fa-icon>
   </div>
 
-  <p>{{featureGallery[displayedFeature].label}}</p>
+  <div class="label" (animationend)="finishTransition()">
+    <!-- Displayed label -->
+    <p>{{featureGallery[displayedFeature].label}}</p>
+
+    <!-- Transitioning label -->
+    <p>{{nextFeature == null ? "" : featureGallery[nextFeature].label}}</p>
+  </div>
 
 </div>
 
