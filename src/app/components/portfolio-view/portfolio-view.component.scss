@@ -162,10 +162,56 @@
     }
   }
 
+  .gallery-control {
+    // background-color: red;
+    height: 4.5rem;
+    margin-top: -2.5rem;
+    margin-bottom: -1rem;
+
+    z-index: 10;
+
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    // margin-top: -1rem;
+    opacity: 0;
+
+    transition: all 200ms;
+    user-select: none;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    > * {
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(1.4);
+      }
+    }
+
+    .feature {
+      font-size: 1.1rem;
+      transition: all 200ms;
+
+      &.active {
+        transform: scale(1.4);
+      }
+    }
+
+    .arrow {
+      margin-inline: 1rem;
+    }
+  }
+
   p {
     padding-inline: calc(var(--side-margin) + 1rem);
     text-align: center;
     font-size: 1.6rem;
+
+    height: 4rem;
   }
 }
 

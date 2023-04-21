@@ -25,12 +25,20 @@
 
 <!-- Feature Gallery -->
 <div class="feature-gallery">
-  <div class="frame">
-    <img src="../../../assets/images/app-example.svg" alt="Project preview">
+  <div class="diagonal-slice">
+    <div class="frame">
+      <img src="../../../assets/images/app-example.svg" alt="Project preview">
+    </div>
   </div>
 
-  <p>Create maps, cars and clients, assign routes for the clients' destinations, customize your experience,
-    and watch it all unfold in real-time.</p>
+  <div class="gallery-control">
+    <fa-icon [icon]="['fas', 'circle-left']" (click)="setFeature(displayedFeature - 1)" class="arrow"></fa-icon>
+    <fa-icon *ngFor="let feature of featureGallery; let i = index" [icon]="iconFor(i)"
+      [class.active]="i == displayedFeature" (click)="setFeature(i)" class="feature"></fa-icon>
+    <fa-icon [icon]="['fas', 'circle-right']" (click)="setFeature(displayedFeature + 1)" class="arrow"></fa-icon>
+  </div>
+
+  <p>{{featureGallery[displayedFeature].label}}</p>
 
 </div>
 
@@ -76,7 +84,7 @@
       </span>
     </span>
   </div>
-<!-- 
+  <!-- 
   <div class="features">
     <div class="feature">
       <p>Fine tune map generation parameters to create realistic-looking maps to simulate with</p>

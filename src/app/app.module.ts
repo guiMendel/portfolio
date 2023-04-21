@@ -19,10 +19,13 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faCheck,
+  faCircleDot,
+  faCircleLeft,
+  faCircleRight,
   faLocationArrow,
-  faX,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
+import { faCircle } from '@fortawesome/free-regular-svg-icons'
 import { TooltipHelpComponent } from './components/tooltip-help/tooltip-help.component'
 import { ToggleComponent } from './components/toggle/toggle.component'
 
@@ -49,7 +52,11 @@ export class AppModule {
       faReact,
       faVuejs,
       faCheck,
-      faXmark
+      faXmark,
+      faCircleLeft,
+      faCircleRight,
+      faCircle,
+      faCircleDot
     )
   }
 }

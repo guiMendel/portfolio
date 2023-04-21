@@ -51,13 +51,13 @@ $light: rgb(var(--light-rgb));
 
 @mixin no-vibrant-colors {
   // $main: #FAFEFF;
-  // $secondary: #D9DDDE;
+  // $secondary: #BBBEBF;
   // $highlight: #00B2FA;
   // $dark: #00587A;
   // $light: #D5F0FB;
 
   --main-rgb: 250, 254, 255;
-  --secondary-rgb: 217, 221, 222;
+  --secondary-rgb: 187, 190, 191;
   --highlight-rgb: 0, 178, 250;
   --dark-rgb: 0, 88, 122;
   --light-rgb: 213, 240, 251;
