@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit, OnDestroy } from '@angular/core'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 @Component({
@@ -6,7 +6,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
   templateUrl: './portfolio-view.component.html',
   styleUrls: ['./portfolio-view.component.scss'],
 })
-export class PortfolioViewComponent {
+export class PortfolioViewComponent implements OnInit, OnDestroy {
   featureGallery: { label: string; media?: string }[] = [
     {
       label:
@@ -46,8 +46,17 @@ export class PortfolioViewComponent {
     return this.nextFeature ?? this.displayedFeature
   }
 
-  setFeature(newIndex: number) {
+  setFeature(newIndex: number, suspendScroll = true) {
     if (this.nextFeature != null) return
+
+    if (suspendScroll) {
+      this.scrollActive = false
+      if (this.scrollResetToken != undefined) clearTimeout(this.scrollResetToken)
+      this.scrollResetToken = setTimeout(() => {
+        this.scrollActive = true
+        this.scrollResetToken = undefined
+      }, 10000)
+    }
 
     const n = this.featureGallery.length
 
@@ -86,5 +95,22 @@ export class PortfolioViewComponent {
 
     // Start queued transition
     if (this.nextFeature != null) setTimeout(() => this.transition(), 10)
+  }
+
+  galleryScrollToken?: ReturnType<typeof setInterval>
+
+  scrollResetToken?: ReturnType<typeof setInterval>
+
+  scrollActive = true
+
+  ngOnInit(): void {
+    this.galleryScrollToken = setInterval(() => {
+      if (this.scrollActive)
+        this.setFeature(this.highlightedFeature() + 1, false)
+    }, 5000)
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.galleryScrollToken)
   }
 }
