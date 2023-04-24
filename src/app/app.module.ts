@@ -14,8 +14,11 @@ import {
 import {
   faAngular,
   faGithub,
+  faHtml5,
   faReact,
+  faSquareJs,
   faVuejs,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faCheck,
@@ -56,7 +59,10 @@ export class AppModule {
       faCircleLeft,
       faCircleRight,
       faCircle,
-      faCircleDot
+      faCircleDot,
+      faYoutube,
+      faSquareJs,
+      faHtml5
     )
   }
 }

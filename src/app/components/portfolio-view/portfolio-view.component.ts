@@ -7,24 +7,29 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
   styleUrls: ['./portfolio-view.component.scss'],
 })
 export class PortfolioViewComponent implements OnInit, OnDestroy {
-  featureGallery: { label: string; media?: string }[] = [
+  featureGallery: { label: string; keyword: string; media?: string }[] = [
     {
+      keyword: "In a Nutshell",
       label:
-        "Create maps, cars and clients, assign routes for the clients' destinations, customize your experience, and watch it all unfold in real-time",
+        "Create maps, cars and clients, assign routes for their destinations, customize your experience, hit play and watch it all unfold in real-time",
     },
     {
+      keyword: "Advanced Map Generation",
       label:
         'Fine tune map generation parameters to create realistic-looking maps to simulate with',
     },
     {
+      keyword: "Live Editing of Clients, Cars & Streets",
       label:
         'Add, remove and edit clients, cars and streets and watch they interact in real-time',
     },
     {
+      keyword: "Route Generation & Visualization",
       label:
         "Pick and visualize clients' routes on the go. You decide whether to optimize the route or pick a specific car!",
     },
     {
+      keyword: "Customization",
       label:
         "Customize the app's theme by picking different color and layout schemes",
     },

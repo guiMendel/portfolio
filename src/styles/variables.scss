@@ -50,17 +50,18 @@ $light: rgb(var(--light-rgb));
 // No vibrant colors Palette
 
 @mixin no-vibrant-colors {
-  // $main: #FAFEFF;
-  // $secondary: #BBBEBF;
-  // $highlight: #00B2FA;
-  // $dark: #00587A;
-  // $light: #D5F0FB;
-
-  --main-rgb: 250, 254, 255;
-  --secondary-rgb: 187, 190, 191;
-  --highlight-rgb: 0, 178, 250;
-  --dark-rgb: 0, 88, 122;
-  --light-rgb: 213, 240, 251;
+  $main: #ffffff;
+  $secondary: #e1e1e1;
+  $highlight: #4bcac5;
+  $dark: #005a57;
+  $light: #ffffff;
+  
+  --main-rgb: 255, 255, 255;
+  --secondary-rgb: 0, 90, 87;
+  --highlight-rgb: 75, 202, 197;
+  --dark-rgb: 0, 90, 87;
+  // --dark-rgb: 102, 65, 71;
+  --light-rgb: 255, 255, 255;
 }
 
 // General

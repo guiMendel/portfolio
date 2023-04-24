@@ -5,6 +5,7 @@
   <!-- Links -->
   <span class="links">
     <fa-icon [icon]="['fab', 'github']" data-help="Go to GitHub page"></fa-icon>
+    <fa-icon [icon]="['fab', 'youtube']" data-help="Watch recorded tour"></fa-icon>
     <fa-icon [icon]="['fas', 'location-arrow']" data-help="Go to deployment"></fa-icon>
   </span>
 
@@ -44,10 +45,16 @@
 
   <div class="label" (animationend)="finishTransition()">
     <!-- Displayed label -->
-    <p>{{featureGallery[displayedFeature].label}}</p>
+    <div>
+      <h3>{{featureGallery[displayedFeature].keyword}}</h3>
+      <p>{{featureGallery[displayedFeature].label}}</p>
+    </div>
 
     <!-- Transitioning label -->
-    <p>{{nextFeature == null ? "" : featureGallery[nextFeature].label}}</p>
+    <div>
+      <h3>{{nextFeature == null ? "" : featureGallery[nextFeature].keyword}}</h3>
+      <p>{{nextFeature == null ? "" : featureGallery[nextFeature].label}}</p>
+    </div>
   </div>
 
 </div>
@@ -92,34 +99,16 @@
           </g>
         </svg> Vercel
       </span>
+
+      <span class="tech">
+        <fa-icon [icon]="['fab', 'square-js']"></fa-icon>
+        JavaScript
+      </span>
+
+      <span class="tech">
+        <fa-icon [icon]="['fab', 'html5']"></fa-icon>
+        HTML/CSS
+      </span>
     </span>
   </div>
-  <!-- 
-  <div class="features">
-    <div class="feature">
-      <p>Fine tune map generation parameters to create realistic-looking maps to simulate with</p>
-
-      <img src="../../../assets/images/app-example.svg" alt="Project preview">
-    </div>
-
-    <div class="feature">
-      <p>Add, remove and edit clients, cars and streets and watch they interact in real-time</p>
-
-      <img src="../../../assets/images/app-example.svg" alt="Project preview">
-    </div>
-
-    <div class="feature">
-      <p>Pick and visualize clients' routes on the go. You decide whether to optimize the route or pick a specific car!
-      </p>
-
-      <img src="../../../assets/images/app-example.svg" alt="Project preview">
-    </div>
-
-    <div class="feature">
-      <p>Customize the app's theme by picking different color and layout schemes
-      </p>
-
-      <img src="../../../assets/images/app-example.svg" alt="Project preview">
-    </div>
-  </div> -->
 </div>
