@@ -1,0 +1,67 @@
+<div *ngIf="entry != undefined" class="content">
+  <!-- Title -->
+  <h1>{{entry.title}}</h1>
+
+  <!-- Links -->
+  <span class="links">
+    <a *ngFor="let accessType of entryAccessTypes; trackBy: makeTracker('link')" target="_blank"
+      [href]="accessType.link" [attr.data-help]="accessType.help">
+      <fa-icon [icon]="accessType.icon"></fa-icon></a>
+  </span>
+
+  <!-- Subtitle -->
+  <h2>{{entry.subtitle}}</h2>
+</div>
+
+<!-- Feature Gallery -->
+<div *ngIf="entry != undefined" class="feature-gallery" [class]="galleryClass">
+  <div class="diagonal-slice">
+    <div class="frame">
+      <!-- Displayed media -->
+      <img src="../../../assets/images/app-example.svg" alt="Project preview">
+
+      <!-- Transitioning media -->
+      <img src="../../../assets/images/app-example.svg" alt="Project preview">
+    </div>
+  </div>
+
+  <div class="gallery-control">
+    <fa-icon [icon]="['fas', 'circle-left']" (click)="setFeature(highlightedFeature() - 1)" class="arrow"></fa-icon>
+    <fa-icon *ngFor="let feature of entry.features; let i = index; trackBy: makeTracker('keyword')" [icon]="iconFor(i)"
+      [class.active]="highlightedFeature() == i" (click)="setFeature(i)" class="feature"></fa-icon>
+    <fa-icon [icon]="['fas', 'circle-right']" (click)="setFeature(highlightedFeature() + 1)" class="arrow"></fa-icon>
+  </div>
+
+  <div class="label" (animationend)="finishTransition()">
+    <!-- Displayed label -->
+    <div>
+      <h3>{{entry.features[displayedFeature].keyword}}</h3>
+      <p>{{entry.features[displayedFeature].label}}</p>
+    </div>
+
+    <!-- Transitioning label -->
+    <div>
+      <h3>{{nextFeature == null ? "" : entry.features[nextFeature].keyword}}</h3>
+      <p>{{nextFeature == null ? "" : entry.features[nextFeature].label}}</p>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="entry != undefined" class="content">
+  <div class="tech-stack">
+    <h2>Tech Stack</h2>
+    <span class="techs">
+      <span *ngFor="let tech of techs; trackBy: makeTracker('name')" class="tech">
+        <!-- Case has an fa icon -->
+        <fa-icon *ngIf="tech.icon.fontAwesome != undefined; else localIcon" [icon]="tech.icon.fontAwesome"></fa-icon>
+        
+        <!-- Case only has a local icon -->
+        <ng-template #localIcon>
+          <app-local-icon [icon]="tech.icon.local"></app-local-icon>
+        </ng-template>
+        {{tech.name}}
+      </span>
+    </span>
+  </div>
+</div>

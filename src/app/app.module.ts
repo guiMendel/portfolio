@@ -30,7 +30,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faCircle } from '@fortawesome/free-regular-svg-icons'
 import { TooltipHelpComponent } from './components/tooltip-help/tooltip-help.component'
-import { ToggleComponent } from './components/toggle/toggle.component'
+import { ToggleComponent } from './components/toggle/toggle.component';
+import { PortfolioEntryComponent } from './components/portfolio-entry/portfolio-entry.component';
+import { LocalIconComponent } from './components/local-icon/local-icon.component'
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { ToggleComponent } from './components/toggle/toggle.component'
     ContactViewComponent,
     TooltipHelpComponent,
     ToggleComponent,
+    PortfolioEntryComponent,
+    LocalIconComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
