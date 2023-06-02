@@ -29,39 +29,68 @@ $line-width: 5px;
 // $main: #fffe00;
 // $secondary: #b3b200;
 // $highlight: #7900fa;
-// $dark: #340d5e;
+// $text: #340d5e;
 // $light: #ffffb3;
 
+// $main: #FFFFFF;
+// $secondary: #F6F6F0;
+// $highlight: #1A1A1A;
+// $text: #A6A69D;
+
 :root {
-  --main-rgb: 255, 254, 0;
-  --secondary-rgb: 179, 178, 0;
-  --highlight-rgb: 121, 0, 250;
-  --dark-rgb: 52, 13, 94;
-  --light-rgb: 255, 255, 179;
+  --main-rgb: 255, 255, 255;
+  --secondary-rgb: 246, 246, 240;
+  --highlight-rgb: 26, 26, 26;
+  --text-rgb: 166, 166, 157;
 }
 
 $main: rgb(var(--main-rgb));
 $secondary: rgb(var(--secondary-rgb));
 $highlight: rgb(var(--highlight-rgb));
-$dark: rgb(var(--dark-rgb));
-$light: rgb(var(--light-rgb));
+$text: rgb(var(--text-rgb));
+
+// $main: #F7FFFF;
+// $secondary: #D2FBFC;
+// $highlight: #1BD7DE;
+// $text: #0E888A;
+// $light: #2FE7EB;
+
+// $main: #8CFF9A;
+// $secondary: #60E06F;
+// $highlight: #B85170;
+// $text: #22A331;
+// $light: #D6FFDB;
+
+// $main: #090F21;
+// $secondary: #131E3D;
+// $highlight: #00FF08;
+// $text: #BFFFC1;
+// $light: #00FF08;
+
+// $main: #1A1A1A;
+// $secondary: #171717;
+// $highlight: #FFFFFF;
+// $text: #969696;
+// $light: #E6E6E6;
+
+
 
 // No vibrant colors Palette
 
-@mixin no-vibrant-colors {
-  $main: #ffffff;
-  $secondary: #e1e1e1;
-  $highlight: #4bcac5;
-  $dark: #005a57;
-  $light: #ffffff;
+// @mixin no-vibrant-colors {
+//   $main: #ffffff;
+//   $secondary: #e1e1e1;
+//   $highlight: #005a57;
+//   $text: #4bcac5;
+//   $light: #ffffff;
   
-  --main-rgb: 255, 255, 255;
-  --secondary-rgb: 0, 90, 87;
-  --highlight-rgb: 75, 202, 197;
-  --dark-rgb: 0, 90, 87;
-  // --dark-rgb: 102, 65, 71;
-  --light-rgb: 255, 255, 255;
-}
+//   --main-rgb: 255, 255, 255;
+//   --secondary-rgb: 0, 90, 87;
+//   --highlight-rgb: 75, 202, 197;
+//   --text-rgb: 0, 90, 87;
+//   // --text-rgb: 102, 65, 71;
+//   --light-rgb: 255, 255, 255;
+// }
 
 // General
 

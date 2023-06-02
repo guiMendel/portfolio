@@ -12,7 +12,7 @@
   justify-content: space-around;
   padding: 0.2em;
 
-  background-color: $dark;
+  background-color: $secondary;
 
   border-radius: calc(var(--width) / 2);
 
@@ -31,7 +31,7 @@
 
     left: $pad;
 
-    background-color: $light;
+    background-color: $text;
 
     transition: all 200ms;
 
@@ -39,11 +39,11 @@
   }
 
   &:hover {
-    filter: brightness(1.05);
+    filter: brightness(0.9);
   }
 
   fa-icon {
-    color: $light;
+    color: $text;
     font-size: 0.6em;
 
     transition: all 200ms;

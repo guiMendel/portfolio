@@ -6,10 +6,9 @@
   padding: 0.5rem 1rem;
   border-radius: 10px;
 
-  background-color: rgb(var(--dark-rgb), 0.85);
+  background-color: rgb(var(--highlight-rgb), 0.85);
   backdrop-filter: blur(1px);
-  color: $light;
-
+  color: $main;
   // box-shadow: 0 0 0px 10px $highlight;
 
   z-index: 100;
