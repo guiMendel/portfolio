@@ -4,4 +4,8 @@ svg {
   fill: $dark;
   width: 1em;
   height: 1em;
+
+  .svg-bg {
+    fill: $main;
+  }
 }

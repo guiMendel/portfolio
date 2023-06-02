@@ -52,6 +52,42 @@ const portfolio: PortfolioEntry[] = [
       },
     ],
   },
+  {
+    title: 'Boteco Brawl',
+
+    subtitle:
+      'Smash Bros Clone: A bar-fight mayhem game leveraging subtle and complex features of modern fighting and platform games',
+
+    accessLinks: {
+      [AccessType.GitHub]: 'https://github.com/guiMendel/boteco-brawl',
+      [AccessType.YouTube]: 'https://youtu.be/u3-lYJqdrVY',
+    },
+
+    techStack: [AvailableTech.Cpp, AvailableTech.Sdl],
+
+    features: [
+      {
+        keyword: 'In a Nutshell',
+        label:
+          'Pick a typical brazilian bar dish as your fighter and battle your way to the top of the food-chain on top of bar tables, hookas and bbq grillers',
+      },
+      {
+        keyword: '6 Attacks + 2 Special Moves',
+        label:
+          'Charge up your directed attacks for extra kick & damage, and time your special moves to catch your opponent off-guard',
+      },
+      {
+        keyword: 'HTML Flexbox, Recreated',
+        label:
+          'The UI module is a recreation of the Flexbox, HTML DOM and style inheritance features from HTML, making UI construction a breeze',
+      },
+      {
+        keyword: 'Intricate Game Features',
+        label:
+          'Particle effects, smooth auto camera controls, coyote jumping, dash i-frames and many more subtle features to explore',
+      },
+    ],
+  },
 ]
 
 export default portfolio

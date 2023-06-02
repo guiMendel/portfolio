@@ -30,17 +30,13 @@ export const enum AvailableTech {
   Html = 'HTML/CSS',
   Canvas = 'Canvas',
   Vercel = 'Vercel',
+  Cpp = 'C++',
+  Sdl = 'SDL',
 }
 
 type TechIcon = {
   fontAwesome?: IconProp
   local?: Promise<string>
-}
-
-// === LOCAL ICONS
-
-async function fetchLocalIcon(name: string) {
-  return fetch(`./assets/icons/${name}.svg`).then((response) => response.text())
 }
 
 export const techMap: { [key in AvailableTech]: TechIcon } = {
@@ -49,13 +45,21 @@ export const techMap: { [key in AvailableTech]: TechIcon } = {
   [AvailableTech.Html]: { fontAwesome: ['fab', 'html5'] },
   [AvailableTech.Canvas]: { local: fetchLocalIcon('canvas') },
   [AvailableTech.Vercel]: { local: fetchLocalIcon('vercel') },
+  [AvailableTech.Cpp]: { local: fetchLocalIcon('c-plus-plus') },
+  [AvailableTech.Sdl]: { local: fetchLocalIcon('sdl') },
+}
+
+// === LOCAL ICONS
+
+async function fetchLocalIcon(name: string) {
+  return fetch(`./assets/icons/${name}.svg`).then((response) => response.text())
 }
 
 export interface PortfolioEntry {
   title: string
   subtitle: string
 
-  accessLinks: { [key in AccessType]: string }
+  accessLinks: { [key in AccessType]?: string }
 
   techStack: Array<AvailableTech>
 
